@@ -1,12 +1,55 @@
-Note: this is described in detail here: http://danshiebler.com/2016-08-17-musical-tensorflow-part-two-the-rnn-rbm/
+# Cyberbach
+This repository contains the code to host a web app that takes .midi files
+as inputs and generates a new .midi file using recurrent neural networks in tensorflow.  
 
 
-# Music_RNN_RBM
+This solution is heavily based on Dab Shiebler's [Musical TensorFlow](http://danshiebler.com/2016-08-17-musical-tensorflow-part-two-the-rnn-rbm/) 
+article for generating long sequences of polyphonic music by using an RNN_RBM in TensorFlow. 
 
-This repository contains code for generating long sequences of polyphonic music by using an RNN_RBM in TensorFlow. 
+The original solution was upgraded to work with Tensorflow 11, accept user provided  midi files, automatically generate
+new music and play the new music online
 
+To see a demo of our live solution checkout [cyberbach.com](cyberbach.com)
+
+
+
+# Installation
+The instructions below assume that you have installed [anaconda](https://www.continuum.io/downloads) and know how 
+virtual environments work.  If you are not familiar with virtual environments it is **highly recommended** that 
+you familiarize yourself with them first.    
+
+## Clone this repository
+$ git clone git@github.com:gc-cloud/cyberbach.git
+
+## Move to the cyberbach folder
+
+$ cd cyberbach
+
+## Create and activate a conda environment with python 2.7
+
+$ conda create -n tf10_py2.7 python=2.7
+
+$ source activate tf10_py2.7
+
+## Install tensorflow 11
+
+If you have a Mac:
+$ export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-0.10.0-py2-none-any.whl
+
+If you are using linux
+$ export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.10.0-cp27-none-linux_x86_64.whl
+
+$ pip install --upgrade $TF_BINARY_URL
+
+## Install dependencies (pandas, tqdm, patplotlib, midi)
+$ conda install pandas
+$ conda install -c conda-forge tqdm
+$ conda install matplotlib
+$ pip install python-midi
+
+# Generating Music with RNN_RBM
 ### TLDR:
-You can generate music by cloning the directory and running:
+You can generate music by running:
 ```
 python rnn_rbm_generate.py parameter_checkpoints/pretrained.ckpt
 ```
