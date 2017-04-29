@@ -1,4 +1,6 @@
 # Cyberbach
+# Harvard Extension School - Final Project CSCIE63
+
 This repository contains the code to host a web app that takes .midi files
 as inputs and generates a new .midi file using recurrent neural networks in tensorflow.  
 
