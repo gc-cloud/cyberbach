@@ -3,3 +3,6 @@
 .idea*
 *.whl
 *.meta
+*.txt
+*.data*
+*.index

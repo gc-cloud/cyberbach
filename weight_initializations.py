@@ -48,7 +48,7 @@ def main(source_music_folder):
 	#Run the session
 	with tf.Session() as sess:
 		#Initialize the variables of the model
-	    init = tf.initialize_all_variables()
+	    init = tf.global_variables_initializer()
 	    sess.run(init)
 
 	    #Run over each song num_epoch times
