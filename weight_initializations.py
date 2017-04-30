@@ -1,21 +1,26 @@
 import tensorflow as tf
 import numpy as np
+import sys
 from tqdm import tqdm
 import RBM
 import rnn_rbm #The hyperparameters of the RBM and RNN-RBM are specified in the rnn_rbm file
-import midi_manipulation 
+import midi_manipulation
+import rnn_rbm_train
+import rnn_rbm_generate
 
 """
 	This file stores the code for initializing the weights of the RNN-RBM. We initialize the parameters of the RBMs by 
 	training them directly on the data with CD-k. We initialize the parameters of the RNN with small weights.
 """
 
+#Define control variables
 num_epochs = 100 #The number of epochs to train the RBM
 lr = 0.01 #The learning rate for the RBM
 
-def main():
+
+def main(source_music_folder):
 	#Load the Songs
-	songs = midi_manipulation.get_songs('Pop_Music_Midi')
+	songs = midi_manipulation.get_songs(source_music_folder)
 
 
 	x  = tf.placeholder(tf.float32, [None, rnn_rbm.n_visible], name="x") #The placeholder variable that holds our data
@@ -53,5 +58,12 @@ def main():
 	    #Save the initialized model here
 	    save_path = saver.save(sess, "parameter_checkpoints/initialized.ckpt")
 
+        #train the model
+        #rnn_rbm_train.main(20)
+
+        #generate music using epoch 14.  Hardcoded for now but will fix
+        #rnn_rbm_generate('parameter_checkpoints/epoch_14.ckpt')
+
 if __name__ == "__main__":
-    main()
+    #main()
+    main(sys.argv[1])
