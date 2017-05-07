@@ -1,0 +1,10 @@
+.gallery { border: thin solid #333;  background-color: #ffff; min-width: 500px; max-width: 1900px; text-align: center; }
+.gallery img { margin: 10px; border: thin solid black;}
+.gallery a:link, .gallery a:visited, .gallery a:hover, .gallery a:active
+{ text-decoration: none; background-color: inherit; color: inherit;}
+
+.gallery { margin-bottom: 2em; float: left; width: 100%; }
+.gallery div { margin-left: 3em; float: left; height: 200px; width: 150px; text-align: center; font-size: xx-small; }
+/* margin: 0.25in; padding: 0.25in; */
+.gallery, .gallery li { list-style: none; margin: 0; padding:  }
+.gallery li { display: block; float: left; width: 150px; height: 100px; margin: 5px;}
