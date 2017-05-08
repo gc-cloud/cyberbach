@@ -1,4 +1,4 @@
-#!/home/sford/anaconda2/envs/tf1.1_py2.7/bin/python
+#!/home/ubuntu/anaconda2/envs/tf1.1_py2.7/bin/python
 import cgitb
 import cgi
 
@@ -38,7 +38,7 @@ print("<h2>Hello World!</h2>")
 print("</div>")
 
 print("<div class=\"footer\">")
-print("<p>Tensor Music | Create and <a href=\"../tensorweb/play.html\">Play</a></p>")
+print("<p>Tensor Music | <a href=\"../tensorweb/index.html\">Create</a> and <a href=\"../tensorweb/play.html\">Play</a></p>")
 print("</div>")
     
 print("</body>")
