@@ -1,13 +1,8 @@
-import tensorflow as tf
 import numpy as np
-import glob
-
-from tensorflow.python.ops import control_flow_ops # deprecated
-from tqdm import tqdm
+import tensorflow as tf
 
 import RBM
-import midi_manipulation
-
+from tensorpy import midi_manipulation
 
 """
     This file contains the TF implementation of the RNN-RBM, as well as the hyperparameters of the model
@@ -15,7 +10,7 @@ import midi_manipulation
 # The range of notes that we can produce
 note_range = midi_manipulation.span
 # The size of each data vector and the size of the RBM visible layer
-n_visible = 2*note_range*midi_manipulation.num_timesteps
+n_visible = 2*note_range * midi_manipulation.num_timesteps
 # The size of the RBM hidden layer
 n_hidden = 50
 # The size of each RNN hidden layer

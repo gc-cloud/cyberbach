@@ -1,10 +1,11 @@
-import time
 import sys
-import tensorflow as tf
+import time
+
 import numpy as np
-from tqdm import tqdm
+import tensorflow as tf
+
 import rnn_rbm
-import midi_manipulation 
+from tensorpy import midi_manipulation
 
 """
     This file contains the code for training the RNN-RBM by using the data in the Pop_Music_Midi directory

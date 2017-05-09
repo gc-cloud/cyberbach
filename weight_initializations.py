@@ -1,12 +1,11 @@
-import tensorflow as tf
-import numpy as np
 import sys
+
+import tensorflow as tf
 from tqdm import tqdm
+
 import RBM
-import rnn_rbm #The hyperparameters of the RBM and RNN-RBM are specified in the rnn_rbm file
-import midi_manipulation
-import rnn_rbm_train
-import rnn_rbm_generate
+import rnn_rbm  # The hyperparameters of the RBM and RNN-RBM are specified in the rnn_rbm file
+from tensorpy import midi_manipulation
 
 """
 	This file stores the code for initializing the weights of the RNN-RBM. We initialize the parameters of the RBMs by 

@@ -1,17 +1,10 @@
-import tensorflow as tf
-import numpy as np
-import pandas as pd
 import sys
-import os
-from tensorflow.python.ops import control_flow_ops
+
+import tensorflow as tf
 from tqdm import tqdm
-from matplotlib import pyplot as plt
-from copy import deepcopy
-from tensorflow.examples.tutorials.mnist import input_data
-import RBM
+
 import rnn_rbm
-import time
-import midi_manipulation
+from tensorpy import midi_manipulation
 
 """
     This file contains the code for running a tensorflow session to generate music
@@ -45,7 +38,8 @@ def main(saved_weights_path):
             # Prime the network with song primer and generate an original song
             generated_music = sess.run(generate(300), feed_dict={x: song_primer})
             # The new song will be saved here
-            new_song_path = "music_outputs/{}_{}".format(i, primer_song.split("/")[-1])
+            #new_song_path = "music_outputs/{}_{}".format(i, primer_song.split("/")[-1])
+            new_song_path = "music_outputs/newsong"
             midi_manipulation.write_song(new_song_path, generated_music)
 
 if __name__ == "__main__":

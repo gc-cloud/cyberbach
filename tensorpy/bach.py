@@ -3,14 +3,13 @@ import os
 import sys
 
 # Append paths to python files so we can import them
-sys.path.append('..')
+#sys.path.append('../')
 
 # import python script to generate new music
-import rnn_rbm_generate.py
+import rnn_rbm_generate
 
 # call to generate a new song
-generate= 'rnn_rbm_generate.main("parameter_checkpoints/pretrained.ckpt")'
-os.system(generate)
+rnn_rbm_generate.main("parameter_checkpoints/pretrained.ckpt")
 
 # Define an array with the path of favorite voices to use for conversion
 # to wav files.  These voices were installed with timidity
@@ -24,10 +23,10 @@ voices=["Tone_000/101_Goblins--Unicorn.pat",
 
 # Convert file from midi to .wav using external call to timidity
 # and selecting a voice from the voices array
-cmd = "timidity song1.mid -OwS2 -x'bank 0\n0 "+voices[6]+"'"
+cmd = "timidity newsong.mid -OwS2 -x'bank 0\n0 "+voices[6]+"'"
 os.system(cmd)
 
 # Play song to make sure all is ok
-cmd2 = "play song1.wav"
+cmd2 = "play newsong.wav"
 os.system(cmd2)
 
