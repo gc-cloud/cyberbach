@@ -23,10 +23,10 @@ voices=["Tone_000/101_Goblins--Unicorn.pat",
 
 # Convert file from midi to .wav using external call to timidity
 # and selecting a voice from the voices array
-cmd = "timidity newsong.mid -OwS2 -x'bank 0\n0 "+voices[6]+"'"
+cmd = "timidity music_outputs/newsong.mid -OwS2 -x'bank 0\n0 "+voices[6]+"'"
 os.system(cmd)
 
 # Play song to make sure all is ok
-cmd2 = "play newsong.wav"
+cmd2 = "play music_outputs/newsong.wav"
 os.system(cmd2)
 
