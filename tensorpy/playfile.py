@@ -41,8 +41,8 @@ print("<nav><ul>")
 #print ("<li><b>Please select the file you wish to play</b></li>") 
 
 for file in os.listdir("../tensorweb/mp3files"):
-    if file.endswith(".mp3"):
-        print ("<li><a href=\"/tensorweb/mp3files/%s\" target=\"mp3frame\">%s</a></li>" % (file,file)) 
+    #if file.endswith(".mp3"):
+    print ("<li><a href=\"/tensorweb/mp3files/%s\" target=\"mp3frame\">%s</a></li>" % (file,file))
 
 print("</ul></nav>")
 print("</div>")
