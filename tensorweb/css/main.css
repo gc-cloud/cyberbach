@@ -11,10 +11,12 @@ ul li { margin-top: 5px; }
 .footer a:link, .footer a:visited, .footer a:hover, .footer a:active
 { text-decoration: none; color: blue; padding: 5px; }
 .footer a:hover { background-color: blue; color: white; }
-.formsubmit { text-align: center}
+.formsubmit { text-align: center; }
+.songs { text-align: center; }
 
 nav ul {list-style: none; padding: 0;}
-nav ul li a {display: block;text-decoration: none; padding: 0.5em 0 0.5em 1em; border: thin solid navy; font-weight: bold;}
+nav ul li a {display: block;text-decoration: none; padding: 0.5em 0 0.5em 1em; border: thin solid navy; font-weight: bold; }
+
 nav ul li a:link {display: block;}
 nav ul li a:visited {display: block;}
 nav ul li a:hover {display: block; border: thin solid white; background-color: navy; color: white;}
