@@ -30,12 +30,12 @@ def main(source_music_folder):
 	bv  = tf.Variable(tf.zeros([1, rnn_rbm.n_visible], tf.float32), name="bv")#The RNN -> RBM visible bias vector
 	Wvu = tf.Variable(tf.random_normal([rnn_rbm.n_visible, rnn_rbm.n_hidden_recurrent], 0.0001), name="Wvu") #The data -> RNN weight matrix
 	Wuu = tf.Variable(tf.random_normal([rnn_rbm.n_hidden_recurrent, rnn_rbm.n_hidden_recurrent], 0.0001), name="Wuu") #The RNN hidden unit weight matrix
-	bu  = tf.Variable(tf.zeros([1, rnn_rbm.n_hidden_recurrent],  tf.float32), name="bu")   #The RNN hidden unit bias vector
+	bu  = tf.Variable(tf.zeros([1, rnn_rbm.n_hidden_recurrent], tf.float32), name="bu")   #The RNN hidden unit bias vector
 	u0  = tf.Variable(tf.zeros([1, rnn_rbm.n_hidden_recurrent], tf.float32), name="u0") #The initial state of the RNN
 
 	#The RBM bias vectors. These matrices will get populated during rnn-rbm training and generation
-	BH_t = tf.Variable(tf.ones([1, rnn_rbm.n_hidden],  tf.float32), name="BH_t") 
-	BV_t = tf.Variable(tf.ones([1, rnn_rbm.n_visible],  tf.float32), name="BV_t") 
+	BH_t = tf.Variable(tf.ones([1, rnn_rbm.n_hidden], tf.float32), name="BH_t")
+	BV_t = tf.Variable(tf.ones([1, rnn_rbm.n_visible], tf.float32), name="BV_t")
 
 	#Build the RBM optimization
 	saver = tf.train.Saver()

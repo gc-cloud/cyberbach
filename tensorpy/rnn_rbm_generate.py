@@ -4,7 +4,7 @@ import tensorflow as tf
 from tqdm import tqdm
 
 import rnn_rbm
-from tensorpy import midi_manipulation
+import midi_manipulation
 
 """
     This file contains the code for running a tensorflow session to generate music

@@ -2,7 +2,7 @@ import numpy as np
 import tensorflow as tf
 
 import RBM
-from tensorpy import midi_manipulation
+import midi_manipulation
 
 """
     This file contains the TF implementation of the RNN-RBM, as well as the hyperparameters of the model

@@ -1,12 +1,11 @@
 
 import os
-import sys
-
-# Append paths to python files so we can import them
-#sys.path.append('../')
 
 # import python script to generate new music
 import rnn_rbm_generate
+
+# Append paths to python files so we can import them
+# sys.path.append('../')
 
 # call to generate a new song
 rnn_rbm_generate.main("parameter_checkpoints/pretrained.ckpt")
@@ -23,6 +22,7 @@ voices=["Tone_000/101_Goblins--Unicorn.pat",
 
 # Convert file from midi to .wav using external call to timidity
 # and selecting a voice from the voices array
+# -OwS2 indicates: Output wave, Stereo, 24 bit
 cmd = "timidity music_outputs/newsong.mid -OwS2 -x'bank 0\n0 "+voices[1]+"'"
 os.system(cmd)
 
