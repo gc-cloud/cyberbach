@@ -32,7 +32,7 @@ os.system(cmd)
 cmd ="mv music_outputs/newsong.wav ../tensorweb/mp3files"
 os.system(cmd)
 
-# Play song to make sure all is ok
-cmd2 = "play ../tensorweb/mp3files/newsong.wav"
-os.system(cmd2)
+# Play song to make sure all is ok. Comment out the next two lines in the server
+# cmd2 = "play ../tensorweb/mp3files/newsong.wav"
+# os.system(cmd2)
 

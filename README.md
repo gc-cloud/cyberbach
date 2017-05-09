@@ -91,13 +91,32 @@ convert the midi protocol to actual digitizes sound waves.  We use Timidity++ to
 are many Timidity++ documents out there that are not actively maintained.  For this project we used the following:
 
 ##
-1) Download Timidity https://sourceforge.net/projects/timidity/files/TiMidity%2B%2B/TiMidity%2B%2B-2.13.0/
+Preferred method
+$ sudo apt install timidity
+
+ALternate method
+1) Download Timidity   
+   
+   ```$ wget https://sourceforge.net/projects/timidity/files/TiMidity%2B%2B/TiMidity%2B%2B-2.13.0/TiMidity%2B%2B-2.13.0.tar.gz```
+   
 2) Move the  compressed to the location of your preference and extract it
-3) cd to the directory where you extracted Timidity and run $ ./configure
-4) Run $make
-5) Run $make install
+   
+   ```$ tar zxvf TiMidity++-2.13.0.tar.gz```   
+   
+3) cd to the directory where you extracted Timidity and configure ( you will need a c compiler)   
+   
+   ```$ ./configure```   
+   
+4) Run 
+   
+   ```$make ```  
+   
+5) Run 
+   
+   ```$make install```
+   
 6) Make sure that the directory for sound fonts is appropriate.  In our case we had to edit the
-/etc/timiditytimidity.cfg file and change the source
+/etc/timidity/timidity.cfg file and change the source
 #source /usr/share/doc/timidity-patches-eaw/examples/timidity.cfg
 source freepats.cfg
 7) Optional install a player for command line
