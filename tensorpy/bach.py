@@ -1,7 +1,12 @@
+#!/home/ubuntu/anaconda2/envs/tf1.1_py2.7/bin/python
+import cgitb
+import cgi
 
 import os
 import random
 import rnn_rbm_generate
+
+cgitb.enable()
 
 # Append paths to python files so we can import them
 # sys.path.append('../')
