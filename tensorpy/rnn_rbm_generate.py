@@ -11,7 +11,7 @@ import midi_manipulation
 """
 
 # The number of songs to generate
-num = 3
+num = 1
 # The path to the song to use to prime the network
 primer_song = 'Pop_Music_Midi/Every Time We Touch - Chorus.midi'
 
