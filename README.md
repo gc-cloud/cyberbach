@@ -5,16 +5,16 @@
 This repository contains the code to host a web app that generates .wav files
 using recurrent neural networks in tensorflow.
 
-This solution is **heavily based** on
+The RNN_RBM solution is **heavily based** on
 - Dab Shiebler's [Musical TensorFlow](http://danshiebler.com/2016-08-17-musical-tensorflow-part-two-the-rnn-rbm/)
 article for generating long sequences of polyphonic music by using an RNN_RBM in TensorFlow. 
 
-The original solution was upgraded to work with Tensorflow 1.1  accept user provided  midi files, automatically generate
-new music and play the new music online.  See log of major changes below for changes to core code from Dab Shiebler's
+The original solution was upgraded to work with Tensorflow 1.1 see log of major changes below for changes to core 
+code from Dab Shiebler's.  Other modifications include the ability to automatically generate
+new music, convert the new music from midi to wav, and play the new music online.  The solution to convert from midi
+to wav files uses  [Timidity++](https://sourceforge.net/projects/timidity/files/TiMidity%2B%2B/TiMidity%2B%2B-2.13.0/) Synthesizer
 
-- [Timidity++](https://sourceforge.net/projects/timidity/files/TiMidity%2B%2B/TiMidity%2B%2B-2.13.0/) Synthesizer
-
-To see a demo of our live solution checkout [http://cyberbach.com](cyberbach.com)
+To see a demo of our live solution checkout [TensorWeb Music](http://ec2-34-207-111-44.compute-1.amazonaws.com/tensorweb/play.html)
 
 
 
@@ -92,9 +92,10 @@ are many Timidity++ documents out there that are not actively maintained.  For t
 
 ##
 Preferred method
-$ sudo apt install timidity
-
-ALternate method
+   
+```$ sudo apt install timidity```
+   
+Alternate method
 1) Download Timidity   
    
    ```$ wget https://sourceforge.net/projects/timidity/files/TiMidity%2B%2B/TiMidity%2B%2B-2.13.0/TiMidity%2B%2B-2.13.0.tar.gz```
