@@ -2,15 +2,17 @@
 # Harvard Extension School - Final Project CSCIE63
 # Gerardo Castaneda & Stephen Ford
 
-This repository contains the code to host a web app that takes .midi files
-as inputs and generates a new .midi file using recurrent neural networks in tensorflow.  
+This repository contains the code to host a web app that generates .wav files
+using recurrent neural networks in tensorflow.
 
-
-This solution is **heavily based** on Dab Shiebler's [Musical TensorFlow](http://danshiebler.com/2016-08-17-musical-tensorflow-part-two-the-rnn-rbm/) 
+This solution is **heavily based** on
+- Dab Shiebler's [Musical TensorFlow](http://danshiebler.com/2016-08-17-musical-tensorflow-part-two-the-rnn-rbm/)
 article for generating long sequences of polyphonic music by using an RNN_RBM in TensorFlow. 
 
 The original solution was upgraded to work with Tensorflow 1.1  accept user provided  midi files, automatically generate
 new music and play the new music online.  See log of major changes below for changes to core code from Dab Shiebler's
+
+- [Timidity++](https://sourceforge.net/projects/timidity/files/TiMidity%2B%2B/TiMidity%2B%2B-2.13.0/) Synthesizer
 
 To see a demo of our live solution checkout [http://cyberbach.com](cyberbach.com)
 
@@ -54,7 +56,7 @@ $ conda install -c conda-forge tqdm
 $ conda install matplotlib   
 $ pip install python-midi   
 
-# Generating Music with RNN_RBM
+# Generating Music with RNN_RBM using python
 ### TLDR:
 You can generate music by running:
 ```
@@ -83,6 +85,31 @@ file `parameter_checkpoints/pretrained.ckpt`, or you can use one of the ckpt fil
 run `train_rnn_rbm.py`, the model creates a `epoch_<x>.ckpt` file in the parameter_checkpoints directory every 
 couple of epochs. 
 
+# Making midi files audio files
+To 'convert' midi files to audio files you need to assign sound fonts to your midi files and then
+convert the midi protocol to actual digitizes sound waves.  We use Timidity++ to accomplish this. Take note that there
+are many Timidity++ documents out there that are not actively maintained.  For this project we used the following:
+
+##
+1) Download Timidity https://sourceforge.net/projects/timidity/files/TiMidity%2B%2B/TiMidity%2B%2B-2.13.0/
+2) Move the  compressed to the location of your preference and extract it
+3) cd to the directory where you extracted Timidity and run $ ./configure
+4) Run $make
+5) Run $make install
+6) Make sure that the directory for sound fonts is appropriate.  In our case we had to edit the
+/etc/timiditytimidity.cfg file and change the source
+#source /usr/share/doc/timidity-patches-eaw/examples/timidity.cfg
+source freepats.cfg
+7) Optional install a player for command line
+sudo apt install sox
+8) Play a song
+$ timidity pathToSong/song.mid
+9) Convert a song to .wav
+$ timidity song1.mid -OwS2 -x'bank 0\n0 Tone_000/101_Goblins--Unicorn.pat'
+
+In the example above, 'Tone_000/101_Goblins--Unicorn.pat' is the name of the sound we are using 
+to convert to the .wav file.  If you are curious, you can explore different sounds in your found fonts file
+(in our case freepats.cfg)
 
 ## To-dos
 add calls to rnn_rbm_train and rnn_rbm_generate from weight_initializations.py so everything 
