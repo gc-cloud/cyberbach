@@ -66,7 +66,8 @@ print("<pre>")
 # -OwS2 indicates: Output wave, Stereo, 24 bit
 # we use a random voice for the new song
 voice = random.choice(voices)
-cmd = "/usr/bin/timidity /home/ubuntu/cyberbach/tensorpy/music_outputs/newsong.mid -OwS2 -x'bank 0\n0 "+voice +"' > t.out 2>&1"
+#cmd = "/usr/bin/timidity /home/ubuntu/cyberbach/tensorpy/music_outputs/newsong.mid -OwS2 -x'bank 0\n0 "+voice +"' > t.out 2>&1"
+cmd = "/usr/bin/timidity /home/ubuntu/cyberbach/tensorpy/music_outputs/newsong.mid -OwS2 -x'bank 0\\n0 "+voice +"' > t.out 2>&1"
 subprocess.call(cmd, shell=True)
 
 # Move the new song to the mp3files directory
