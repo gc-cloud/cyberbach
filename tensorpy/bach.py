@@ -43,17 +43,10 @@ print("</div>")
 print("<h2>Hang in there, we are creating your song...</h2>")
 
 
-print("<div class=\"footer\">")
-print(
-"<p>Tensor Music | <a href=\"../tensorweb/index.html\">Create</a> and <a href=\"../tensorweb/play.html\">Play</a></p>")
-print("</div>")
 
-print("</body>")
-
-print("</html>")
 
 # call to generate a new song
-#rnn_rbm_generate.main("parameter_checkpoints/pretrained.ckpt")
+rnn_rbm_generate.main("parameter_checkpoints/pretrained.ckpt")
 
 # Define an array with the path of favorite voices to use for conversion
 # to wav files.  These voices were installed with timidity
@@ -82,4 +75,11 @@ voice = random.choice(voices)
 # os.system(cmd2)
 
 
+print("<div class=\"footer\">")
+print(
+"<p>Tensor Music | <a href=\"../tensorweb/index.html\">Create</a> and <a href=\"../tensorweb/play.html\">Play</a></p>")
+print("</div>")
 
+print("</body>")
+
+print("</html>")
