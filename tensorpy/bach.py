@@ -30,13 +30,11 @@ voices=["Tone_000/101_Goblins--Unicorn.pat",
 
 voice = random.choice(voices)
 cmd = "timidity music_outputs/newsong.mid -OwS2 -x'bank 0\n0 "+voice +"'"
-#os.system(cmd)
-subprocess.call(cmd, shell=False)
+subprocess.call(cmd, shell=True)
 
 # Move the new song to the mp3files directory
 cmd ="cp music_outputs/newsong.wav ../tensorweb/mp3files"
-#os.system(cmd)
-subprocess.call(cmd, shell=False)
+subprocess.call(cmd, shell=True)
 
 # Play song to make sure all is ok. Comment out the next two lines in the server
 # cmd2 = "play ../tensorweb/mp3files/newsong.wav"
