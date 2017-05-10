@@ -2,9 +2,14 @@
 import cgitb
 import cgi
 import os
+import random
+import rnn_rbm_generate
 
 cgitb.enable()
 
+
+
+# Create our web page
 print("Content-type: text/html")
 print("")
 print("<!DOCTYPE html>")
@@ -34,30 +39,52 @@ print("<body>")
 
 print("<div class=\"header\"> ")
 print("<h1>TensorWeb Music</h1>")
+print("<p>Composing Your Song...</p>")
 print("</div>")
+
+# ------------------------  Start Processing Composition ------------------
+# call to generate a new song
+rnn_rbm_generate.main("parameter_checkpoints/pretrained.ckpt")
+
+# Define an array with the path of favorite voices to use for conversion
+# to wav files.  These voices were installed with timidity
+voices=["Tone_000/101_Goblins--Unicorn.pat",
+"Tone_000/004_Electric_Piano_1_Rhodes.pat",
+"Tone_000/046_Harp.pat",
+"Tone_000/016_Hammond_Organ.pat",
+"Tone_000/053_Voice_Oohs.pat",
+"Tone_000/088_New_Age.pat",
+"Tone_000/094_Halo_Pad.pat"]
+
+# Convert file from midi to .wav using external call to timidity
+# and selecting a voice from the voices array
+# -OwS2 indicates: Output wave, Stereo, 24 bit
+# we use a random voice for the new song
+print("<p>transforming to audio...</p>")
+
+voice = random.choice(voices)
+cmd = "timidity music_outputs/newsong.mid -OwS2 -x'bank 0\n0 "+voice +"'"
+#os.system(cmd)
+
+# Move the new song to the mp3files directory
+cmd ="cp music_outputs/newsong.wav ../tensorweb/mp3files"
+#os.system(cmd)
+
+# Play song to make sure all is ok. Comment out the next two lines in the server
+# cmd2 = "play ../tensorweb/mp3files/newsong.wav"
+# os.system(cmd2)
+
+# ------------------------  End Processing  Composition ------------------
 
 print("<div class=\"formsubmit\">")
 print("<p>Your Song is Ready!</p>")
-#print("<iframe name=\"mp3frame\" src=\"\"></iframe>")
 print("<iframe name=\"mp3frame\" src=\"/tensorweb/mp3files/newsong.wav\">Play Your Song</iframe>")
 print("</div>")
 
-#print("<div class=\"formsubmit\">")
-#print("<nav><ul>")
 
-#print ("<li><b> Finished composing... Click to play</b></li>")
 
-#for file in os.listdir("../tensorweb/mp3files"):
-    #if file.endswith(".mp3"):
-    #print ("<li><a href=\"/tensorweb/mp3files/%s\" target=\"mp3frame\">%s</a></li>" % (file, file))
-#    print ("<li><a href=\"/tensorweb/mp3files/%s\" target=\"mp3frame\">%s</a></li>" % (file, "Play Your Song!"))
-
-#print("</ul></nav>")
-#print("</div>")
 
 print("<div class=\"footer\">")
-#print(
-#"<p>Tensor Music | <a href=\"../tensorweb/index.html\">Create New Song</a> and <a href=\"../tensorweb/play.html\">Play</a></p>")
 print(
 "<p><a href=\"../tensorweb/index.html\">Create New Song</a> </p>")
 print("</div>")
