@@ -1,7 +1,6 @@
 #!/home/ubuntu/anaconda2/envs/tf1.1_py2.7/bin/python
 import cgitb
 import cgi
-import playfile
 
 cgitb.enable()
 
