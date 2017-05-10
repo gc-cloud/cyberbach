@@ -26,6 +26,8 @@ def main(saved_weights_path):
     # We use this saver object to restore the weights of the model
     saver = tf.train.Saver(tvars)
 
+    summ = tf.summary.merge_all()
+
     song_primer = midi_manipulation.get_song(primer_song) 
 
     with tf.Session() as sess:
