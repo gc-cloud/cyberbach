@@ -37,7 +37,8 @@ print("<h1>TensorWeb Music</h1>")
 print("</div>")
 
 print("<div class=\"formsubmit\">")
-print("<iframe name=\"mp3frame\" src=\"\"></iframe>")
+#print("<iframe name=\"mp3frame\" src=\"\"></iframe>")
+print("<iframe name=\"mp3frame\" src=\"\"><li><a href=\"/tensorweb/mp3files/newsong.wav\" target=\"mp3frame\">Play Your Song</a></li></iframe>")
 print("</div>")
 
 print("<div class=\"formsubmit\">")
