@@ -39,7 +39,7 @@ print("<body>")
 
 print("<div class=\"header\"> ")
 print("<h1>TensorWeb Music</h1>")
-print("<p>Composing Your Song...</p>")
+print("<p style=\"color:blue\">Your Song is Ready!</p>")
 print("</div>")
 
 # ------------------------  Start Processing Composition ------------------
@@ -60,7 +60,6 @@ voices=["Tone_000/101_Goblins--Unicorn.pat",
 # and selecting a voice from the voices array
 # -OwS2 indicates: Output wave, Stereo, 24 bit
 # we use a random voice for the new song
-print("<p>Transforming to audio...</p>")
 
 print("<pre>")
 
@@ -77,7 +76,7 @@ print("</pre>")
 
 
 # ------------------------  End Processing  Composition ------------------
-print("<p>Your Song is Ready!</p>")
+
 print("<div class=\"formsubmit\">")
 print("<iframe name=\"mp3frame\" src=\"/tensorweb/mp3files/newsong.wav\">Play Your Song</iframe>")
 print("</div>")
