@@ -40,7 +40,7 @@ print("<div class=\"header\"> ")
 print("<h1>TensorWeb Music</h1>")
 print("</div>")
 
-print("<h2>Hang in there, we are creating your song...</h2>")
+print("<p>Composing your song...</p>")
 
 
 
@@ -62,9 +62,11 @@ voices=["Tone_000/101_Goblins--Unicorn.pat",
 # and selecting a voice from the voices array
 # -OwS2 indicates: Output wave, Stereo, 24 bit
 # we use a random voice for the new song
+print("<p>transforming to audio...</p>")
+
 voice = random.choice(voices)
-#cmd = "timidity music_outputs/newsong.mid -OwS2 -x'bank 0\n0 "+voice +"'"
-#os.system(cmd)
+cmd = "timidity music_outputs/newsong.mid -OwS2 -x'bank 0\n0 "+voice +"'"
+os.system(cmd)
 
 # Move the new song to the mp3files directory
 #cmd ="cp music_outputs/newsong.wav ../tensorweb/mp3files"
