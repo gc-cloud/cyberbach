@@ -66,6 +66,10 @@ print("<pre>")
 # -OwS2 indicates: Output wave, Stereo, 24 bit
 # we use a random voice for the new song
 voice = random.choice(voices)
+
+# NOTE FOR STEPHEN this is where the script is working. At this point we have a new newsong.mid, but the call to timidity
+# does not update newsong.wav in the music_outputs directory.  It is probably a permission issue since it works on the shell
+
 #cmd = "/usr/bin/timidity /home/ubuntu/cyberbach/tensorpy/music_outputs/newsong.mid -OwS2 -x'bank 0\n0 "+voice +"' > t.out 2>&1"
 cmd = "/usr/bin/timidity /home/ubuntu/cyberbach/tensorpy/music_outputs/newsong.mid -OwS2 -x'bank 0\\n0 "+voice +"' > t.out 2>&1"
 subprocess.call(cmd, shell=True)
