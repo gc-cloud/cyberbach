@@ -64,12 +64,12 @@ print("<p>Transforming to audio...</p>")
 print("<pre>")
 
 voice = random.choice(voices)
-cmd = "/usr/bin/timidity music_outputs/newsong.mid -OwS2 -x'bank 0\n0 "+voice +"'"
+cmd = "/usr/bin/timidity music_outputs/newsong.mid -OwS2 -x'bank 0\n0 "+voice +"' -o /home/ubuntu/cyberbach/tensorweb/mp3files/newsong2.wav > t.out 2>&1"
 subprocess.call(cmd, shell=True)
 
 # Move the new song to the mp3files directory
-cmd ="/bin/cp music_outputs/newsong.wav /home/ubuntu/cyberbach/tensorweb/mp3files"
-subprocess.call(cmd, shell=True)
+#cmd ="/bin/cp music_outputs/newsong.wav /home/ubuntu/cyberbach/tensorweb/mp3files"
+#subprocess.call(cmd, shell=True)
 
 print("</pre>")
 
@@ -77,7 +77,7 @@ print("</pre>")
 # ------------------------  End Processing  Composition ------------------
 print("<p>Your Song is Ready!</p>")
 print("<div class=\"formsubmit\">")
-print("<iframe name=\"mp3frame\" src=\"/tensorweb/mp3files/newsong.wav\">Play Your Song</iframe>")
+print("<iframe name=\"mp3frame\" src=\"/tensorweb/mp3files/newsong2.wav\">Play Your Song</iframe>")
 print("</div>")
 
 print("<div class=\"footer\">")
