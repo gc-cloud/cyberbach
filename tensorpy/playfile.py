@@ -59,7 +59,7 @@ print("<div class=\"footer\">")
 #print(
 #"<p>Tensor Music | <a href=\"../tensorweb/index.html\">Create New Song</a> and <a href=\"../tensorweb/play.html\">Play</a></p>")
 print(
-"<p>Tensor Music | <a href=\"../tensorweb/index.html\">Create New Song</a> </p>")
+"<p><a href=\"../tensorweb/index.html\">Create New Song</a> </p>")
 print("</div>")
 
 print("</body>")
