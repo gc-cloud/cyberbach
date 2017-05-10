@@ -93,7 +93,7 @@ are many Timidity++ documents out there that are not actively maintained.  For t
 ##
 Preferred method
    
-```$ sudo apt install timidity```
+   ```$ sudo apt install timidity```
    
 Alternate method
 1) Download Timidity   
@@ -120,24 +120,28 @@ Alternate method
 /etc/timidity/timidity.cfg file and change the source
 #source /usr/share/doc/timidity-patches-eaw/examples/timidity.cfg
 source freepats.cfg
-7) Optional install a player for command line
-sudo apt install sox
+7) Optional: install a player for command line   
+   
+   ```sudo apt install sox```
+     
 8) Play a song
-$ timidity pathToSong/song.mid
+   
+   ```$ timidity pathToSong/song.mid```
+   
 9) Convert a song to .wav
-$ timidity song1.mid -OwS2 -x'bank 0\n0 Tone_000/101_Goblins--Unicorn.pat'
-
+   
+   ```$ timidity song1.mid -OwS2 -x'bank 0\n0 Tone_000/101_Goblins--Unicorn.pat'```
+   
 In the example above, 'Tone_000/101_Goblins--Unicorn.pat' is the name of the sound we are using 
 to convert to the .wav file.  If you are curious, you can explore different sounds in your found fonts file
 (in our case freepats.cfg)
 
 ## To-dos
-add calls to rnn_rbm_train and rnn_rbm_generate from weight_initializations.py so everything 
-is executed with one call
-set independent name for trained ckpt for a given run
+add random pretrained file selection 
+setup call from web page to bach.py
 
 
-## Log of major changes
+## Log of major changes to original RNN_RBM solution
 
 Steps to upgrade original code to  Tensorflow 1.1:   
 
