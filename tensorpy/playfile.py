@@ -60,7 +60,7 @@ voices=["Tone_000/101_Goblins--Unicorn.pat",
 # and selecting a voice from the voices array
 # -OwS2 indicates: Output wave, Stereo, 24 bit
 # we use a random voice for the new song
-print("<p>transforming to audio...</p>")
+print("<p>Transforming to audio...</p>")
 
 voice = random.choice(voices)
 cmd = "timidity music_outputs/newsong.mid -OwS2 -x'bank 0\n0 "+voice +"'"
@@ -71,18 +71,14 @@ cmd ="cp music_outputs/newsong.wav ../tensorweb/mp3files"
 #os.system(cmd)
 
 # Play song to make sure all is ok. Comment out the next two lines in the server
-# cmd2 = "play ../tensorweb/mp3files/newsong.wav"
+cmd2 = "play ../tensorweb/mp3files/newsong.wav"
 # os.system(cmd2)
 
 # ------------------------  End Processing  Composition ------------------
-
-print("<div class=\"formsubmit\">")
 print("<p>Your Song is Ready!</p>")
+print("<div class=\"formsubmit\">")
 print("<iframe name=\"mp3frame\" src=\"/tensorweb/mp3files/newsong.wav\">Play Your Song</iframe>")
 print("</div>")
-
-
-
 
 print("<div class=\"footer\">")
 print(
