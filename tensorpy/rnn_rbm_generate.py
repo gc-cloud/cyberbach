@@ -1,6 +1,4 @@
-#!/home/ubuntu/anaconda2/envs/tf1.1_py2.7/bin/python
-#import cgitb
-#import cgi
+
 import sys
 
 import tensorflow as tf
@@ -8,7 +6,6 @@ from tqdm import tqdm
 
 import rnn_rbm
 import midi_manipulation
-#cgitb.enable()
 
 """
     This file contains the code for running a tensorflow session to generate music
