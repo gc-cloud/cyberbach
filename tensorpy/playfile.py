@@ -8,8 +8,6 @@ import subprocess
 
 cgitb.enable()
 
-
-
 # Create our web page
 print("Content-type: text/html")
 print("")
@@ -66,12 +64,12 @@ print("<p>Transforming to audio...</p>")
 print("<pre>")
 
 voice = random.choice(voices)
-cmd = "timidity music_outputs/newsong.mid -OwS2 -x'bank 0\n0 "+voice +"'"
-#subprocess.call(cmd, shell=True)
+cmd = "/usr/bin/timidity music_outputs/newsong.mid -OwS2 -x'bank 0\n0 "+voice +"'"
+subprocess.call(cmd, shell=True)
 
 # Move the new song to the mp3files directory
-cmd ="cp music_outputs/newsong.wav ../tensorweb/mp3files"
-#subprocess.call(cmd, shell=True)
+cmd ="/bin/cp music_outputs/newsong.wav /home/ubuntu/cyberbach/tensorweb/mp3files"
+subprocess.call(cmd, shell=True)
 
 print("</pre>")
 
