@@ -30,7 +30,7 @@ def main(saved_weights_path):
 
     with tf.Session() as sess:
         init = tf.global_variables_initializer()
-	writer = tf.summary.FileWriter(/home/ubuntu/cyberbach/tensorpy/tensorboardlog)
+	writer = tf.summary.FileWriter("/home/ubuntu/cyberbach/tensorpy/tensorboardlog")
     	writer.add_graph(sess.graph)
         sess.run(init)
         # load the saved weights of the network

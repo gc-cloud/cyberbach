@@ -5,7 +5,7 @@ from tqdm import tqdm
 
 import RBM
 import rnn_rbm  # The hyperparameters of the RBM and RNN-RBM are specified in the rnn_rbm file
-from tensorpy import midi_manipulation
+import midi_manipulation
 
 """
 	This file stores the code for initializing the weights of the RNN-RBM. We initialize the parameters of the RBMs by 

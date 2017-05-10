@@ -5,7 +5,7 @@ import numpy as np
 import tensorflow as tf
 
 import rnn_rbm
-from tensorpy import midi_manipulation
+import midi_manipulation
 
 """
     This file contains the code for training the RNN-RBM by using the data in the Pop_Music_Midi directory
