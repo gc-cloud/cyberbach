@@ -2,19 +2,61 @@
 import cgitb
 import cgi
 
-cgitb.enable()
-
 import os
 import random
 import rnn_rbm_generate
 
+cgitb.enable()
+
+# Produce web page
+print("Content-type: text/html")
+print("")
+print("<!DOCTYPE html>")
+print("<html>")
+print("<head>")
+print("<title>TensorWeb Music</title>")
+
+print("<meta charset=\"utf-8\"/>")
+
+print(
+"<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/jquery.swipebox/1.4.1/css/swipebox.min.css\">")
+print("<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css\"/>")
+print("<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css\"/>")
+print("<link rel=\"stylesheet\" href=\"../tensorweb/css/main.css\">")
+print("<link rel=\"stylesheet\" href=\"../tensorweb/css/gallery.css\">")
+
+print("<script src=\"https://code.jquery.com/jquery-1.11.3.min.js\"></script>")
+print(
+"<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery.swipebox/1.4.1/js/jquery.swipebox.min.js\"></script>")
+print("<script>")
+print("$('.swipebox').swipebox();")
+print("</script>")
+
+print("</head>")
+
+print("<body>")
+
+print("<div class=\"header\"> ")
+print("<h1>TensorWeb Music</h1>")
+print("</div>")
+
+print("<h2>Hang in there, we are creating your song...</h2>")
+
+
+print("<div class=\"footer\">")
+print(
+"<p>Tensor Music | <a href=\"../tensorweb/index.html\">Create</a> and <a href=\"../tensorweb/play.html\">Play</a></p>")
+print("</div>")
+
+print("</body>")
+
+print("</html>")
 
 # call to generate a new song
 rnn_rbm_generate.main("parameter_checkpoints/pretrained.ckpt")
 
 # Define an array with the path of favorite voices to use for conversion
 # to wav files.  These voices were installed with timidity
-
 voices=["Tone_000/101_Goblins--Unicorn.pat",
 "Tone_000/004_Electric_Piano_1_Rhodes.pat",
 "Tone_000/046_Harp.pat",
