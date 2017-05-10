@@ -53,7 +53,7 @@ print("</body>")
 print("</html>")
 
 # call to generate a new song
-rnn_rbm_generate.main("parameter_checkpoints/pretrained.ckpt")
+#rnn_rbm_generate.main("parameter_checkpoints/pretrained.ckpt")
 
 # Define an array with the path of favorite voices to use for conversion
 # to wav files.  These voices were installed with timidity
@@ -70,12 +70,12 @@ voices=["Tone_000/101_Goblins--Unicorn.pat",
 # -OwS2 indicates: Output wave, Stereo, 24 bit
 # we use a random voice for the new song
 voice = random.choice(voices)
-cmd = "timidity music_outputs/newsong.mid -OwS2 -x'bank 0\n0 "+voice +"'"
-os.system(cmd)
+#cmd = "timidity music_outputs/newsong.mid -OwS2 -x'bank 0\n0 "+voice +"'"
+#os.system(cmd)
 
 # Move the new song to the mp3files directory
-cmd ="cp music_outputs/newsong.wav ../tensorweb/mp3files"
-os.system(cmd)
+#cmd ="cp music_outputs/newsong.wav ../tensorweb/mp3files"
+#os.system(cmd)
 
 # Play song to make sure all is ok. Comment out the next two lines in the server
 # cmd2 = "play ../tensorweb/mp3files/newsong.wav"
