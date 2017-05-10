@@ -66,7 +66,7 @@ print("<p>transforming to audio...</p>")
 
 voice = random.choice(voices)
 cmd = "timidity music_outputs/newsong.mid -OwS2 -x'bank 0\n0 "+voice +"'"
-os.system(cmd)
+#os.system(cmd)
 
 # Move the new song to the mp3files directory
 #cmd ="cp music_outputs/newsong.wav ../tensorweb/mp3files"
