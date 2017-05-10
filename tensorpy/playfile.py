@@ -58,8 +58,8 @@ voices=["Tone_000/101_Goblins--Unicorn.pat",
 
 print("<pre>")
 # Delete the old song
-cmd ="/bin/rm /home/ubuntu/cyberbach/tensorweb/mp3files/newsong.wav"
-subprocess.call(cmd, shell=True)
+#cmd ="/bin/rm /home/ubuntu/cyberbach/tensorweb/mp3files/newsong.wav"
+#subprocess.call(cmd, shell=True)
 
 # Convert file from midi to .wav using external call to timidity
 # and selecting a voice from the voices array
