@@ -34,7 +34,10 @@ print("<body>")
 
 print("<div class=\"header\"> ")
 print("<h1>TensorWeb Music</h1>")
-print("<p class =\"row\">Your Song is Ready!</p>")
+print("</div>")
+
+print("<div class=\"container\"> ")
+print("<p>Your Song is Ready!</p>")
 print("</div>")
 
 print("<div class=\"formsubmit\">")
