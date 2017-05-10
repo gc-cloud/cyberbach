@@ -36,9 +36,9 @@ print("<div class=\"header\"> ")
 print("<h1>TensorWeb Music</h1>")
 print("</div>")
 
-print("<div class=\"container\"> ")
-print("<p>Your Song is Ready!</p>")
-print("</div>")
+print("<div class=\"one-third column\"></div> ")
+print("<div class=\"one-third column\"> <p>Your Song is Ready!</p></div>")
+print("<div class=\"one-third column\"></div> ")
 
 print("<div class=\"formsubmit\">")
 #print("<iframe name=\"mp3frame\" src=\"\"></iframe>")
